@@ -1,0 +1,25 @@
+{
+  "name": "lodashWithTestCases",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/memoryStack/lodash.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/memoryStack/lodash/issues"
+  },
+  "homepage": "https://github.com/memoryStack/lodash#readme",
+  "dependencies": {
+    "lodash": "4.17.21"
+  },
+  "devDependencies": {
+    "jest": "28.1.3"
+  }
+}
