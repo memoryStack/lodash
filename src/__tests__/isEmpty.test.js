@@ -1,4 +1,4 @@
-const _isEmpty = require('lodash/isEmpty')
+import _isEmpty from 'lodash/isEmpty'
 
 describe('_isEmpty()', () => {
   test(`returns true when object is passed which doesn't have it's enumerable properties`, () => {

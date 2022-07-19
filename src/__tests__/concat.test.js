@@ -1,4 +1,4 @@
-const _concat = require('lodash/concat')
+import _concat from 'lodash/concat'
 
 describe('_concat()', () => {
   test('returns a new array even when there is nothing to concate', () => {

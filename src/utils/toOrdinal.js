@@ -1,4 +1,4 @@
-const toOrdinal = num => {
+export const toOrdinal = num => {
 
   if (!isValidValueForConversion(num)) {
     return 'NaNth'
@@ -24,8 +24,4 @@ const toOrdinal = num => {
 const isValidValueForConversion = (value) => {
   if (value === null) return false
   return !isNaN(value)
-}
-
-module.exports = {
-  toOrdinal
 }

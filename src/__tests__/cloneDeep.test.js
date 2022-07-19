@@ -1,4 +1,4 @@
-const _cloneDeep = require('lodash/cloneDeep')
+import _cloneDeep from 'lodash/cloneDeep'
 
 describe('_cloneDeep()', () => {
   test('returns null when passed value is null', () => {

@@ -1,4 +1,4 @@
-const _flatten = require('lodash/flatten')
+import _flatten from 'lodash/flatten'
 
 describe('_flatten', () => {
 

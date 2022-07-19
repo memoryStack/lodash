@@ -1,5 +1,4 @@
-
-const { dynamicInterpolation } = require('../utils/dynamicInterpolation')
+import { dynamicInterpolation } from '../utils/dynamicInterpolation'
 
 describe('dynamicInterpolation()', () => {
   test('returns empty string when non string value is sent', () => {

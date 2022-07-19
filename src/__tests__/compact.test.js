@@ -1,4 +1,4 @@
-const _compact = require('lodash/compact')
+import _compact from 'lodash/compact'
 
 describe('_compact()', () => {
 

@@ -1,4 +1,4 @@
-const { toOrdinal } = require('../utils/toOrdinal')
+import { toOrdinal } from '../utils/toOrdinal'
 
 describe('toOrdinal()', () => {
 

@@ -1,4 +1,4 @@
-const _chunk = require('lodash/chunk')
+import _chunk from 'lodash/chunk'
 
 describe('_chunk()', () => {
 
