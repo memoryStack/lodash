@@ -1,4 +1,4 @@
-import _cloneDeep from 'lodash/cloneDeep'
+import _cloneDeep from '../utils/cloneDeep'
 
 describe('_cloneDeep()', () => {
   test('returns null when passed value is null', () => {

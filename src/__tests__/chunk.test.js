@@ -1,4 +1,4 @@
-import _chunk from 'lodash/chunk'
+import _chunk from '../utils/chunk'
 
 describe('_chunk()', () => {
 

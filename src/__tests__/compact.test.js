@@ -1,4 +1,4 @@
-import _compact from 'lodash/compact'
+import _compact from '../utils/compact'
 
 describe('_compact()', () => {
 

@@ -1,4 +1,4 @@
-import _flatten from 'lodash/flatten'
+import _flatten from '../utils/flatten'
 
 describe('_flatten', () => {
 
