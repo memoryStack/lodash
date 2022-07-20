@@ -22,6 +22,7 @@ describe('_difference()', () => {
   test('(NaN === NaN) = false, but still this function performs equality check and weed it out', () => {
     /*
       read below article to understand the equality comparison used by this util
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness  
         https://262.ecma-international.org/7.0/#sec-samevaluezero
     */
 
