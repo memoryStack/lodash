@@ -15,10 +15,6 @@ describe('_drop(array, n)', () => {
     expect(_drop([1, 2, 3])).toStrictEqual([2, 3])
   })
 
-  test('removed 1 element from start by default', () => {
-    expect(_drop([1, 2, 3])).toStrictEqual([2, 3])
-  })
-
   test('returns empty array when number of elements to remove exceeds length of array', () => {
     expect(_drop([1, 2, 3], 4)).toStrictEqual([])
   })
@@ -29,7 +25,7 @@ describe('_drop(array, n)', () => {
     expect(_drop([1, 2, 3], '2')).toStrictEqual([3])
   })
 
-  test('returns array as it as when n is null or false or NaN or some non number transformable value like object or alphabetical string', () => {
+  test('returns array as it is when n is null or false or NaN or some non number transformable value like object or alphabetical string', () => {
     expect(_drop([1, 2, 3], null)).toStrictEqual([1, 2, 3])
     expect(_drop([1, 2, 3], false)).toStrictEqual([1, 2, 3])
     expect(_drop([1, 2, 3], NaN)).toStrictEqual([1, 2, 3])
@@ -37,7 +33,7 @@ describe('_drop(array, n)', () => {
     expect(_drop([1, 2, 3], 'qwerty')).toStrictEqual([1, 2, 3])
   })
 
-  test('removes first element when undefined or true is passed', () => {
+  test('removes first element when n is passed as undefined or true', () => {
     expect(_drop([1, 2, 3], undefined)).toStrictEqual([2, 3])
     expect(_drop([1, 2, 3], true)).toStrictEqual([2, 3])
   })
