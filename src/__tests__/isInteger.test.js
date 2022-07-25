@@ -17,6 +17,10 @@ describe('_isInteger()', () => {
     expect(_isInteger(Number.MAX_VALUE)).toBeTruthy()
   })
 
+  test('returns false when NaN is paassed', () => {
+    expect(_isInteger(NaN)).toBeFalsy()
+  })
+
   test('returns false for some constants from number class', () => {
     expect(_isInteger(Number.MIN_VALUE)).toBeFalsy()
     expect(_isInteger(Infinity)).toBeFalsy()
