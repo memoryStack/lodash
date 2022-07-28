@@ -74,6 +74,10 @@ describe('_filter(array | object, predicate)', () => {
 })
 
 describe('when predicate value is bad', () => {
+  test('when predicate is not passed then _identity is used a default predicate and returns truthy values and filter out falsy values', () => {
+    expect(_filter([1, 2, 3, 0, false, null, NaN, {}])).toStrictEqual([1, 2, 3, {}])
+  })
+
   test.each([null, undefined, {}])('returns collection elements as they are if predicate is null or undefined or empty object', (predicate) => {
     const arr = [1, 2, 3]
 
@@ -83,7 +87,6 @@ describe('when predicate value is bad', () => {
   test.each([1, 'qwerty', [], NaN, true])('returns collection elements as they are if predicate is primitive value or an array', (predicate) => {
     expect(_filter([1, 2, 3], predicate)).toStrictEqual([])
   })
-
 })
 
 describe('when collection value is bad', () => {
