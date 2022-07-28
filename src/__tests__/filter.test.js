@@ -37,7 +37,7 @@ describe('_filter(array | object, predicate)', () => {
     expect(_filter(object, predicate)).toStrictEqual([])
   })
 
-  test('when passed collection is a Set then doesnt run predicate at all and retrurns empty array', () => {
+  test('when passed collection is a Set then doesnt run predicate at all and returns empty array', () => {
     const set = new Set()
     set.add(1)
     set.add({ a: 1 })
@@ -47,7 +47,7 @@ describe('_filter(array | object, predicate)', () => {
     expect(predicate.mock.calls.length).toBe(0)
   })
 
-  test('when passed collection is a Map then doesnt run predicate at all and retrurns empty array', () => {
+  test('when passed collection is a Map then doesnt run predicate at all and returns empty array', () => {
     const map = new Map()
     map.set('a', 1)
     map.set('b', 2)
@@ -73,8 +73,8 @@ describe('_filter(array | object, predicate)', () => {
 
 })
 
-describe('when predicate value is bad', () => {
-  test('when predicate is not passed then _identity is used a default predicate and returns truthy values and filter out falsy values', () => {
+describe('when predicate value is missing or bad', () => {
+  test('when predicate is not passed then _identity is used as default predicate and returns truthy values and filters out falsy values', () => {
     expect(_filter([1, 2, 3, 0, false, null, NaN, {}])).toStrictEqual([1, 2, 3, {}])
   })
 
@@ -84,7 +84,7 @@ describe('when predicate value is bad', () => {
     expect(_filter(arr, predicate)).toStrictEqual(arr)
   })
 
-  test.each([1, 'qwerty', [], NaN, true])('returns collection elements as they are if predicate is primitive value or an array', (predicate) => {
+  test.each([1, 'qwerty', [], NaN, true])('returns empty array if predicate is primitive value or an array', (predicate) => {
     expect(_filter([1, 2, 3], predicate)).toStrictEqual([])
   })
 })
