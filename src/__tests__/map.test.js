@@ -1,23 +1,5 @@
-
 import _map from '../utils/map'
-import _isFunction from '../utils/isFunction'
-
-const getArrayCollection = () => [1, 2, 3, 4]
-
-// TODO: use it in other places as well
-const getSetCollection = () => {
-  const set = new Set()
-  set.add(1)
-  set.add(2)
-  return set
-}
-
-const getMapCollection = () => {
-  const map = new Map()
-  map.set('a', 1)
-  map.set('b', 2)
-  return map
-}
+import { getArrayCollection, getMapCollection, getSetCollection } from '../learningTestsUtils'
 
 describe('_map()', () => {
   test('accepts two arguments (collection, elementIterator)', () => {
