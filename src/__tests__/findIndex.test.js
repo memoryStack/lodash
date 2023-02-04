@@ -75,6 +75,10 @@ describe('predicate shorthands when predicate is not a function', () => {
     expect(_findIndex(collection, { a: 2 })).toBe(1)
   })
 
+  test('returns first element index from collection when predicate empty object', () => {
+    expect(_findIndex([null, 1, 2, 3], {})).toBe(0)
+  })
+
   test('predicate used is _matchesProperty() when passed predicate is an array', () => {
     const collection = [
       { a: 1, b: 1 },
@@ -109,11 +113,11 @@ describe('when predicate value is missing or bad', () => {
     expect(_findIndex([1, 2, 3, 0, false, null, NaN, {}])).toBe(0)
   })
 
-  test.each([null, undefined, {}])('returns first truthy element index from collection when predicate is null or undefined or empty object', (predicate) => {
-    expect(_findIndex([1, 2, 3], predicate)).toBe(0)
+  test.each([null, undefined])('returns first truthy element index from collection when predicate is null or undefined', (predicate) => {
+    expect(_findIndex([null, 1, 2, 3], predicate)).toBe(1)
   })
 
-  test.each([1, 'qwerty', [], NaN, true])('returns -1 if predicate is primitive value or an array', (predicate) => {
+  test.each([0, 1, 'qwerty', [], NaN, true])('returns -1 if predicate is primitive value or an array', (predicate) => {
     expect(_findIndex([1, 2, 3], predicate)).toBe(-1)
   })
 })
