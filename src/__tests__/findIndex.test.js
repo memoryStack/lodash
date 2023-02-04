@@ -66,6 +66,44 @@ describe('_findIndex(array | object, predicate, startIndex)', () => {
   })
 })
 
+describe('predicate shorthands when predicate is not a function', () => {
+  test('predicate used is _matches(obj) when passed value is an object', () => {
+    const collection = [
+      { a: 1, b: 1 },
+      { a: 2, b: 2 },
+    ]
+    expect(_findIndex(collection, { a: 2 })).toBe(1)
+  })
+
+  test('predicate used is _matchesProperty() when passed predicate is an array', () => {
+    const collection = [
+      { a: 1, b: 1 },
+      { a: 2, b: 2 },
+    ]
+    expect(_findIndex(collection, ['a', 2])).toBe(1)
+
+    const collection2 = [
+      { a: { c: 1 }, b: 1 },
+      { a: 2, b: 2 },
+    ]
+    expect(_findIndex(collection2, ['a.c', 1])).toBe(0)
+  })
+
+  test('predicate used is _property() when passed predicate is a string and will return the value at the path mentioned by the string', () => {
+    const collection = [
+      { a: 1, b: 1 },
+      { a: 2, b: 2 },
+    ]
+    expect(_findIndex(collection, 'b')).toBe(0)
+
+    const collection2 = [
+      { a: 1, b: 1 },
+      { a: { c: 1 }, b: 2 },
+    ]
+    expect(_findIndex(collection2, 'a.c')).toBe(1)
+  })
+})
+
 describe('when predicate value is missing or bad', () => {
   test('when predicate is not passed then _identity is used as default predicate and returns first truthy value index', () => {
     expect(_findIndex([1, 2, 3, 0, false, null, NaN, {}])).toBe(0)
