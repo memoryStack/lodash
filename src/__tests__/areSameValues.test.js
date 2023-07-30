@@ -41,4 +41,9 @@ describe('areSameValues() with object values', () => {
     ]
     expect(areSameValues(list, 'a')).toBeFalsy()
   })
+
+  test('return false if literal and object values are mixed', () => {
+    expect(areSameValues([1, 1, { a: 1, b: true }], 'a')).toBeFalsy()
+    expect(areSameValues([1, 1, { a: 1, b: true }])).toBeFalsy()
+  })
 })
