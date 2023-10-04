@@ -12,6 +12,12 @@ describe('_slice(array, start, end)', () => {
     expect(array).toEqual(array)
   })
 
+  test('if end index is not passed then will return elements till the last element in array', () => {
+    const array = [1, 2, 4]
+
+    expect(_slice(array, 1)).toEqual([2, 4])
+  })
+
   test('returns full array if end is greater than the last element index', () => {
     const array = [1, 2, 4]
 
