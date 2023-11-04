@@ -22,4 +22,11 @@ describe('_sortBy(Array | Object)', () => {
 
     expect(_sortBy(users, ['user', 'age'])).toStrictEqual(expectedResult)
   })
+
+  test('will sort the array of numbers as well', () => {
+    const numbersList = [4, 3,  5]
+
+    expect(_sortBy(numbersList)).toStrictEqual([3, 4, 5])
+  })
+
 })

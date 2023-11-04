@@ -19,6 +19,11 @@ describe('_difference()', () => {
     expect(_difference([2, 1, 2])).toStrictEqual([2, 1, 2])
   })
 
+  test('returns empty array if all the elements of first array are present in second array', () => {
+    expect(_difference([2, 1], [1, 2])).toStrictEqual([])
+    expect(_difference([2, 1], [1, 3, 2])).toStrictEqual([])
+  })
+
   test('(NaN === NaN) = false, but still this function performs equality check and weed it out', () => {
     /*
       read below article to understand the equality comparison used by this util
